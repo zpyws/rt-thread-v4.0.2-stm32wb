@@ -11,11 +11,11 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F411RETx</Device>
+          <Device>STM32WB55RGVx</Device>
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STM32F4xx_DFP.2.12.0</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
-          <Cpu>IRAM(0x20000000,0x00020000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IRAM(0x20000000,0x00030000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2 CLOCK(8000000) ELITTLE</Cpu>
           <FlashUtilSpec />
           <StartupFile />
           <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($$Device:STM32F411RETx$CMSIS\Flash\STM32F4xx_512.FLM))</FlashDriverDll>
@@ -241,7 +241,7 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x30000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
@@ -331,9 +331,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls />
-              <Define>USE_HAL_DRIVER, STM32F411xE</Define>
+              <Define>STM32WB55xG, USE_HAL_DRIVER</Define>
               <Undefine />
-              <IncludePath>.;..\..\..\include;applications;.;board;board\CubeMX_Config\Inc;..\libraries\HAL_Drivers;..\libraries\HAL_Drivers\config;..\..\..\libcpu\arm\common;..\..\..\libcpu\arm\cortex-m4;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\finsh;..\..\..\components\libc\compilers\common;..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Inc;..\libraries\STM32F4xx_HAL\CMSIS\Device\ST\STM32F4xx\Include;..\libraries\STM32F4xx_HAL\CMSIS\Include</IncludePath>
+              <IncludePath>.;..\..\..\include;applications;.;board;board\CubeMX_Config\Inc;..\libraries\HAL_Drivers;..\libraries\HAL_Drivers\config;..\..\..\libcpu\arm\common;..\..\..\libcpu\arm\cortex-m4;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\finsh;..\..\..\components\libc\compilers\common;..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Inc;..\libraries\STM32WBxx_HAL\CMSIS\Device\ST\STM32WBxx\Include;..\libraries\STM32WBxx_HAL\CMSIS\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,13 +388,6 @@
               <FileName>components.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\src\components.c</FilePath>
-            </File>
-          </Files>
-          <Files>
-            <File>
-              <FileName>cpu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\src\cpu.c</FilePath>
             </File>
           </Files>
           <Files>
@@ -503,16 +496,16 @@
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_msp.c</FileName>
+              <FileName>stm32wbxx_hal_msp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>board\CubeMX_Config\Src\stm32f4xx_hal_msp.c</FilePath>
+              <FilePath>board\CubeMX_Config\Src\stm32wbxx_hal_msp.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>startup_stm32f411xe.s</FileName>
+              <FileName>startup_stm32wb55xx_cm4.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\CMSIS\Device\ST\STM32WBxx\Source\Templates\arm\startup_stm32wb55xx_cm4.s</FilePath>
             </File>
           </Files>
           <Files>
@@ -666,124 +659,134 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>libc</GroupName>
+          <Files>
+            <File>
+              <FileName>time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\libc\compilers\common\time.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>STM32_HAL</GroupName>
           <Files>
             <File>
-              <FileName>system_stm32f4xx.c</FileName>
+              <FileName>system_stm32wbxx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\CMSIS\Device\ST\STM32WBxx\Source\Templates\system_stm32wbxx.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal.c</FileName>
+              <FileName>stm32wbxx_hal.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_cec.c</FileName>
+              <FileName>stm32wbxx_hal_cortex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cec.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_cortex.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_cortex.c</FileName>
+              <FileName>stm32wbxx_hal_crc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_crc.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_crc.c</FileName>
+              <FileName>stm32wbxx_hal_cryp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_crc.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_cryp.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_cryp.c</FileName>
+              <FileName>stm32wbxx_hal_cryp_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cryp.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_cryp_ex.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_cryp_ex.c</FileName>
+              <FileName>stm32wbxx_hal_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cryp_ex.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_dma.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_dma.c</FileName>
+              <FileName>stm32wbxx_hal_dma_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_dma_ex.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_dma_ex.c</FileName>
+              <FileName>stm32wbxx_hal_pwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_pwr.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_pwr.c</FileName>
+              <FileName>stm32wbxx_hal_pwr_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_pwr_ex.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_pwr_ex.c</FileName>
+              <FileName>stm32wbxx_hal_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_rcc.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_rcc.c</FileName>
+              <FileName>stm32wbxx_hal_rcc_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_rcc_ex.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_rcc_ex.c</FileName>
+              <FileName>stm32wbxx_hal_rng.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_rng.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_rng.c</FileName>
+              <FileName>stm32wbxx_hal_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rng.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_gpio.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_gpio.c</FileName>
+              <FileName>stm32wbxx_hal_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_uart.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_uart.c</FileName>
+              <FileName>stm32wbxx_hal_uart_ex.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_uart_ex.c</FilePath>
             </File>
           </Files>
           <Files>
             <File>
-              <FileName>stm32f4xx_hal_usart.c</FileName>
+              <FileName>stm32wbxx_hal_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\libraries\STM32F4xx_HAL\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_usart.c</FilePath>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_usart.c</FilePath>
             </File>
           </Files>
         </Group>
