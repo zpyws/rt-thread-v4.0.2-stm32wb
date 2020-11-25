@@ -331,9 +331,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls />
-              <Define>USE_HAL_DRIVER, STM32WB55xx</Define>
+              <Define>USE_HAL_DRIVER, RT_USING_ARM_LIBC, STM32WB55xx</Define>
               <Undefine />
-              <IncludePath>.;..\..\..\include;applications;.;board;board\CubeMX_Config\Inc;..\libraries\HAL_Drivers;..\libraries\HAL_Drivers\config;..\..\..\libcpu\arm\common;..\..\..\libcpu\arm\cortex-m4;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\finsh;..\..\..\components\libc\compilers\common;..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Inc;..\libraries\STM32WBxx_HAL\CMSIS\Device\ST\STM32WBxx\Include;..\libraries\STM32WBxx_HAL\CMSIS\Include</IncludePath>
+              <IncludePath>.;..\..\..\include;applications;.;board;board\CubeMX_Config\Inc;..\libraries\HAL_Drivers;..\libraries\HAL_Drivers\config;..\..\..\libcpu\arm\common;..\..\..\libcpu\arm\cortex-m4;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\drivers\include;..\..\..\components\finsh;..\..\..\components\libc\compilers\armlibc;..\..\..\components\libc\compilers\common;..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Inc;..\libraries\STM32WBxx_HAL\CMSIS\Device\ST\STM32WBxx\Include;..\libraries\STM32WBxx_HAL\CMSIS\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -524,6 +524,13 @@
           </Files>
           <Files>
             <File>
+              <FileName>drv_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\HAL_Drivers\drv_rtc.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
               <FileName>drv_common.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libraries\HAL_Drivers\drv_common.c</FilePath>
@@ -575,6 +582,13 @@
               <FileName>pin.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\components\drivers\misc\pin.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\drivers\rtc\rtc.c</FilePath>
             </File>
           </Files>
           <Files>
@@ -660,6 +674,27 @@
         </Group>
         <Group>
           <GroupName>libc</GroupName>
+          <Files>
+            <File>
+              <FileName>libc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\libc\compilers\armlibc\libc.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>mem_std.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\libc\compilers\armlibc\mem_std.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>stubs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\components\libc\compilers\armlibc\stubs.c</FilePath>
+            </File>
+          </Files>
           <Files>
             <File>
               <FileName>time.c</FileName>
@@ -787,6 +822,20 @@
               <FileName>stm32wbxx_hal_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_usart.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>stm32wbxx_hal_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_rtc.c</FilePath>
+            </File>
+          </Files>
+          <Files>
+            <File>
+              <FileName>stm32wbxx_hal_rtc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\STM32WBxx_HAL\STM32WBxx_HAL_Driver\Src\stm32wbxx_hal_rtc_ex.c</FilePath>
             </File>
           </Files>
         </Group>
