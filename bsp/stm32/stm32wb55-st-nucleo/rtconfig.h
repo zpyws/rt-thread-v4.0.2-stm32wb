@@ -168,12 +168,19 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_UART1
+#define BSP_USING_I2C
 #define BSP_USING_I2C1
 
 /* Notice: PB8 --> 24; PB9 --> 25 */
 
 #define BSP_I2C1_SCL_PIN 24
 #define BSP_I2C1_SDA_PIN 25
+#define BSP_USING_I2C2
+
+/* Notice: PA7 --> 7; PB4 --> 20 */
+
+#define BSP_I2C2_SCL_PIN 7
+#define BSP_I2C2_SDA_PIN 20
 #define BSP_USING_ONCHIP_RTC
 #define BSP_RTC_USING_LSE
 
