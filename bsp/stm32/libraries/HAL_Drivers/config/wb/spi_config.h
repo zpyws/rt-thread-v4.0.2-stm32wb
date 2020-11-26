@@ -34,7 +34,7 @@ extern "C" {
     {                                               \
         .dma_rcc = SPI1_TX_DMA_RCC,                 \
         .Instance = SPI1_TX_DMA_INSTANCE,           \
-        .channel = SPI1_TX_DMA_CHANNEL,             \
+        .request = SPI1_TX_DMA_CHANNEL,             \
         .dma_irq = SPI1_TX_DMA_IRQ,                 \
     }
 #endif /* SPI1_TX_DMA_CONFIG */
@@ -46,7 +46,7 @@ extern "C" {
     {                                               \
         .dma_rcc = SPI1_RX_DMA_RCC,                 \
         .Instance = SPI1_RX_DMA_INSTANCE,           \
-        .channel = SPI1_RX_DMA_CHANNEL,             \
+        .request = SPI1_RX_DMA_CHANNEL,             \
         .dma_irq = SPI1_RX_DMA_IRQ,                 \
     }
 #endif /* SPI1_RX_DMA_CONFIG */

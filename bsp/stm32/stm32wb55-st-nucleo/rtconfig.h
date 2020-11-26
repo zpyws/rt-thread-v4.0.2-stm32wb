@@ -84,6 +84,7 @@
 #define RT_USING_I2C_BITOPS
 #define RT_USING_PIN
 #define RT_USING_RTC
+#define RT_USING_SPI
 
 /* Using USB */
 
@@ -179,8 +180,12 @@
 
 /* Notice: PA7 --> 7; PB4 --> 20 */
 
-#define BSP_I2C2_SCL_PIN 7
-#define BSP_I2C2_SDA_PIN 20
+#define BSP_I2C2_SCL_PIN 26
+#define BSP_I2C2_SDA_PIN 27
+#define BSP_USING_SPI
+#define BSP_USING_SPI1
+#define BSP_SPI1_TX_USING_DMA
+#define BSP_SPI1_RX_USING_DMA
 #define BSP_USING_ONCHIP_RTC
 #define BSP_RTC_USING_LSE
 

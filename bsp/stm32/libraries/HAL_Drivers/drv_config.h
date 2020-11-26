@@ -105,7 +105,9 @@ extern "C" {
 #include "h7/pwm_config.h"
 #include "h7/usbd_config.h"
 #elif  defined(SOC_SERIES_STM32WB)		//by yangwensen@20201123
+#include "wb/dma_config.h"
 #include "wb/uart_config.h"
+#include "wb/spi_config.h"
 #endif
 
 #ifdef __cplusplus
