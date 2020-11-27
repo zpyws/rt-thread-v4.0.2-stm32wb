@@ -108,6 +108,7 @@ extern "C" {
 #include "wb/dma_config.h"
 #include "wb/uart_config.h"
 #include "wb/spi_config.h"
+#include "wb/adc_config.h"
 #endif
 
 #ifdef __cplusplus

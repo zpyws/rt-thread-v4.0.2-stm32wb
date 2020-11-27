@@ -27,6 +27,7 @@ extern "C" {
        .Init.DataAlign             = ADC_DATAALIGN_RIGHT,           \
        .Init.ScanConvMode          = DISABLE,                       \
        .Init.EOCSelection          = DISABLE,                       \
+			 .Init.LowPowerAutoWait      = DISABLE,												\
        .Init.ContinuousConvMode    = DISABLE,                       \
        .Init.NbrOfConversion       = 1,                             \
        .Init.DiscontinuousConvMode = DISABLE,                       \
@@ -34,6 +35,8 @@ extern "C" {
        .Init.ExternalTrigConv      = ADC_SOFTWARE_START,            \
        .Init.ExternalTrigConvEdge  = ADC_EXTERNALTRIGCONVEDGE_NONE, \
        .Init.DMAContinuousRequests = DISABLE,                       \
+			 .Init.Overrun 							 = ADC_OVR_DATA_OVERWRITTEN,			\
+			 .Init.OversamplingMode 		 = DISABLE,												\
     }
 #endif /* ADC1_CONFIG */
 #endif /* BSP_USING_ADC1 */
